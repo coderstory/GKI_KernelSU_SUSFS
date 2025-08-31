@@ -40,6 +40,11 @@ on:
         required: true
         type: boolean
         default: true
+      use_O2:
+        description: '是否开启O2编译优化?'
+        required: true
+        type: boolean
+        default: false
       set_defbbr:
         description: '是否将BBR设为默认拥塞算法?（实验性）'
         required: true
@@ -50,6 +55,7 @@ on:
         required: true
         type: boolean
         default: true
+
 jobs:
 
   build-kernel-a13-5-15:
@@ -62,6 +68,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
   get-ksu-manager:
     if: ${{ inputs.get_manager }}
     uses: ./.github/workflows/get-manager.yml

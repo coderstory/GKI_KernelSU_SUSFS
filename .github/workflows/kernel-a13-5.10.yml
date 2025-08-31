@@ -32,7 +32,11 @@ on:
         required: true
         type: boolean
         default: true
-  
+      use_O2:
+        description: '是否开启O2编译优化?'
+        required: true
+        type: boolean
+        default: false
 jobs:
   build-kernel-a13-5-10-kernelsu-susfs:
     strategy:
@@ -53,10 +57,10 @@ jobs:
           #  os_patch_level: "2024-07"
           #- sub_level: "218"
           #  os_patch_level: "2024-08"
-          #- sub_level: "223"
-          #  os_patch_level: "2024-11"
-          #- sub_level: "228"
-          #  os_patch_level: "2025-01"
+          - sub_level: "223"
+           os_patch_level: "2024-11"
+          - sub_level: "228"
+           os_patch_level: "2025-01"
           - sub_level: "X"
             os_patch_level: "lts"
     uses: ./.github/workflows/gki-kernel.yml
@@ -73,3 +77,4 @@ jobs:
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
       supp_op: ${{ inputs.supp_op || false }}
+      use_O2: ${{ inputs.use_O2 || false }}

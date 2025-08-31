@@ -57,6 +57,11 @@ on:
         required: true
         type: boolean
         default: true
+      use_O2:
+        description: '是否开启O2编译优化?'
+        required: true
+        type: boolean
+        default: false
       get_manager:
         description: 'Get the latest KSU Manager at the same time?'
         required: true
@@ -82,6 +87,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
 
   build-kernel-a13-5-10:
     if: contains(github.event.inputs.kernels_to_build, 'all') || contains(github.event.inputs.kernels_to_build, 'a13-5.10')
@@ -94,6 +100,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
 
   build-kernel-a13-5-15:
     if: contains(github.event.inputs.kernels_to_build, 'all') || contains(github.event.inputs.kernels_to_build, 'a13-5.15')
@@ -106,6 +113,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
 
   build-kernel-a14-5-15:
     if: contains(github.event.inputs.kernels_to_build, 'all') || contains(github.event.inputs.kernels_to_build, 'a14-5.15')
@@ -118,6 +126,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
 
   build-kernel-a14-6-1:
     if: contains(github.event.inputs.kernels_to_build, 'all') || contains(github.event.inputs.kernels_to_build, 'a14-6.1')
@@ -130,6 +139,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
 
   build-kernel-a15-6-6:
     if: contains(github.event.inputs.kernels_to_build, 'all') || contains(github.event.inputs.kernels_to_build, 'a15-6.6')
@@ -142,6 +152,7 @@ jobs:
       version: ${{ inputs.version }}
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
+      use_O2: ${{ inputs.use_O2 }}
 
   check-build-status:
     runs-on: ubuntu-latest

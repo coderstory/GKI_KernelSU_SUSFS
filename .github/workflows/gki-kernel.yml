@@ -31,6 +31,10 @@ on:
       # kernelsu_branch_other:
       #   required: false
       #   type: string
+      use_O2:
+        required: true
+        type: boolean
+        default: false
       revision:
         required: false
         type: string
@@ -522,6 +526,17 @@ jobs:
               sed -i '/^CONFIG_LOCALVERSION=/ s/="\([^"]*\)"/="${{ inputs.version }}"/' ./common/arch/arm64/configs/gki_defconfig
             fi
           fi
+
+      - name: 启用 O2 优化
+        if: ${{ inputs.use_O2 }}
+        run: |
+          cd "$CONFIG"
+          echo "为 GKI 启用 O2 编译优化..."
+          echo "CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y" >> ./common/arch/arm64/configs/gki_defconfig
+          
+          # 用于debug config
+          tail -n 10 ./common/arch/arm64/configs/gki_defconfig
+
 
       - name: Build with retry
         uses: nick-fields/retry@v3

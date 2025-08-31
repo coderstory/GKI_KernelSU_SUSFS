@@ -32,7 +32,11 @@ on:
         required: true
         type: boolean
         default: true
-  
+      use_O2:
+        description: '是否开启O2编译优化?'
+        required: true
+        type: boolean
+        default: false
 jobs:
   build-kernel-a14-5-15-kernelsu-susfs:
     strategy:
@@ -75,3 +79,4 @@ jobs:
       use_zram: ${{ inputs.use_zram }}
       use_kpm: ${{ inputs.use_kpm }}
       supp_op: ${{ inputs.supp_op || false }}
+      use_O2: ${{ inputs.use_O2 || false }}
