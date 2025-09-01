@@ -159,7 +159,7 @@ jobs:
           git clone https://github.com/ShirkNeko/susfs4ksu.git -b "$SUSFS_BRANCH"
           git clone https://github.com/WildPlusKernel/kernel_patches.git
           # Sukisu的补丁仓库
-          git clone https://github.com/ShirkNeko/SukiSU_patch.git
+          git clone https://github.com/SukiSU-Ultra/SukiSU_patch.git
           
       - name: 设置 CONFIG 环境变量
         run: |
@@ -421,12 +421,12 @@ jobs:
             echo "CONFIG_ZRAM_WRITEBACK=y" >> "$CONFIG_FILE"
           fi
 
-      - name: 设置BBR为默认拥塞算法
-        if: ${{ inputs.set_defbbr }}
-        run: |
-          CONFIG_FILE="$CONFIG/common/arch/arm64/configs/gki_defconfig"
-          echo "Changing to configuration directory: $CONFIG_FILE..."
-          echo "CONFIG_DEFAULT_BBR=y" >> "$CONFIG_FILE"
+      # - name: 设置BBR为默认拥塞算法
+      #   if: ${{ inputs.set_defbbr }}
+      #   run: |
+      #     CONFIG_FILE="$CONFIG/common/arch/arm64/configs/gki_defconfig"
+      #     echo "Changing to configuration directory: $CONFIG_FILE..."
+      #     echo "CONFIG_DEFAULT_BBR=y" >> "$CONFIG_FILE"
            
       - name: 添加SUSFS配置设置
         run: |
@@ -456,14 +456,6 @@ jobs:
           echo "CONFIG_IP_NF_TARGET_TTL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_IP6_NF_TARGET_HL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_IP6_NF_MATCH_HL=y" >> ./common/arch/arm64/configs/gki_defconfig
-
-          # Add BBR Config
-          echo "CONFIG_TCP_CONG_ADVANCED=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_TCP_CONG_BBR=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_NET_SCH_FQ=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_TCP_CONG_BIC=n" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_TCP_CONG_WESTWOOD=n" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_TCP_CONG_HTCP=n" >> ./common/arch/arm64/configs/gki_defconfig
 
           # Add SUSFS configuration settings
           echo "CONFIG_KSU_SUSFS=y" >> ./common/arch/arm64/configs/gki_defconfig
