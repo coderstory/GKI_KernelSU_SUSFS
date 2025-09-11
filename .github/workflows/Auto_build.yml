@@ -9,7 +9,7 @@ jobs:
   check-and-trigger:
     runs-on: ubuntu-latest
     # 如果要运行自动编译工作流，请手动添加/修改仓库所有者用户名
-    if: contains(fromJSON('["elysias123"]'), github.repository_owner)
+    if: contains(fromJSON('["ShirkNeko", "zzh20188", "elysias123"]'), github.repository_owner)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -92,7 +92,7 @@ jobs:
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/test_release.yml/dispatches \
             -d '{
-              "ref": "main",
+              "ref": "dev",
               "inputs": {
                 "make_release": "true",
                 "kernels_to_build": "all",
