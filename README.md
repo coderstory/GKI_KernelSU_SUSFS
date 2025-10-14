@@ -20,6 +20,7 @@
 | [BBR](https://blog.thinkin.top/archives/ke-pu-bbrdao-di-shi-shi-me) | TCP拥塞控制算法，使网络更快？ |
 | [Wireguard](https://zh.wikipedia.org/wiki/WireGuard) | 参考左侧wiki链接 |
 | [代理性能优化]([https://github.com/ShirkNeko/SukiSU_patch/tree/main/other](https://github.com/Xiaomichael/OnePlus-Actions)) | 优化tproxy性能+启用ipv6 nat转发 |
+| [Baseband-guard](https://github.com/vc-teahouse/Baseband-guard) | 用于从内核层面阻止对关键分区/设备节点的非法写入，降低基带、引导链等关键组件被恶意/误操作篡改的风险 |
 | [LZ4KD](https://github.com/ShirkNeko/SukiSU_patch/tree/main/other) | 听说是来自HUAWEI source的ZRAM算法，补丁由[云彩之枫](http://www.coolapk.com/u/24963680)移植 |
 
 <details>

@@ -177,7 +177,8 @@ jobs:
         -> jit-zygote-cache 检测对抗
         -> O2编译优化 ${{ inputs.use_O2 && '启用' || '未启用' }}
         -> KPM ${{ inputs.use_kpm && ' 支持' || '不支持' }}
-        -> **LZ4KD&ONEPLUS_LZ4K**  ${{ inputs.use_zram && '支持' || '不支持' }}
+        -> Baseband-guard 支持(防止对特定分区的未授权写入)
+        -> ZRAM算法拓展**LZ4KD&ONEPLUS_LZ4K**  ${{ inputs.use_zram && '支持' || '不支持' }}
         -> 代理性能优化
         -> lz4: v1.10.0
 
