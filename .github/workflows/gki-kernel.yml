@@ -34,7 +34,7 @@ on:
       use_O2:
         required: true
         type: boolean
-        default: false
+        default: true
       revision:
         required: false
         type: string
@@ -48,7 +48,7 @@ on:
       use_kpm:
         required: true
         type: boolean
-        default: true
+        default: false
       supp_op:
         required: true
         type: boolean
@@ -73,7 +73,7 @@ jobs:
           remove-large-packages: 'true'  # Frees ~3.1 GB
           remove-swapfile: 'true'        # Frees ~4 GB
           remove-cached-tools: 'false'   # Avoid unless confirmed safe
-          verbose: 'true'                # Enable detailed logging
+          verbose: 'false'                # Enable detailed logging
 
       - name: 设定 CONFIG 环境变量
         run: |
