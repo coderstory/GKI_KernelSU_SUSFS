@@ -1,3 +1,9 @@
+### 本Fork仓库说明
+1.去掉了android 13 5.15内核之外的全部内核构建
+2.默认关闭没啥用的KPM
+3.感谢致力于完善GKI_KernelSU_SUSFS这个仓库的所有成员
+
+
 ### 这是一个自动构建GKI内核的仓库
 
 > 非GKI可以尝试[SukiSU云盘](https://alist.shirkneko.top)的资源，不支持一加ColorOS14、15
