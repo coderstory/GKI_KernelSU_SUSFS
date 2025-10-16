@@ -1,5 +1,5 @@
 ### 本Fork仓库说明
-1.去掉了android 13 5.15内核之外的全部内核构建
+1.去掉了android 13 5.15内核之外的全部内核构建（手持K60U，其他的内核对我没用）
 2.默认关闭没啥用的KPM
 3.感谢致力于完善GKI_KernelSU_SUSFS这个仓库的所有成员
 
@@ -12,7 +12,7 @@
 >
 > 最近更新：1.一加8ELITE处理器可使用6.6内核(未测试)、2.修复这些GKI版本编译报错——[5.10.(66、81、101)、5.15.(74、94、104)]
 ### 下载
-可以[在此](https://github.com/zzh20188/GKI_KernelSU_SUSFS/releases)下载您的资源
+可以[在此]([https://github.com/zzh20188/GKI_KernelSU_SUSFS/releases](https://github.com/coderstory/GKI_KernelSU_SUSFS/releases))下载您的资源
 1. 关于Anykernel3.zip，下载即用！
 - 然后使用刷入软件，例如[HorizonKernelFlasher](https://github.com/libxzr/HorizonKernelFlasher/releases)进行刷写内核
 2. 关于boot.img，下载与你内核格式相匹配的（无压缩、gz、lz4），[参考](https://kernelsu.org/zh_CN/guide/installation.html#install-by-kernelsu-boot-image) **找到合适的 boot.img** 一节
